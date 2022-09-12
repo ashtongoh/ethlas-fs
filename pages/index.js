@@ -131,7 +131,7 @@ export default function Home() {
 
             {/* Code segment for mockup code */}
             <div className="mockup-code shadow-2xl mt-4">
-              <pre data-prefix="1"><code>// Customize your own boba:</code></pre>
+              <pre data-prefix="1"><code>Customize your own boba:</code></pre>
               <pre data-prefix="4" className="text-warning"><code>Boba: If yes, $0.50. Else, $0</code></pre>
               <pre data-prefix="2" className="text-warning"><code>Foam: If yes, $0.50. Else, $0</code></pre>
               <pre data-prefix="3" className="text-warning"><code>Base: If yes, $1. Else, $1.50</code></pre>
