@@ -38,7 +38,7 @@ contract BOBA3Core is ERC721Enumerable, ReentrancyGuard, Ownable, Pausable {
         //uint8 cost;
     }
 
-    address BOBA3StorageAddr;
+    address public BOBA3StorageAddr;
     mapping (uint256 => BBT) public tokenIdToBBT;
     using Strings for uint256; // This is so that uint256 can call up functions from the Strings library
     using Counters for Counters.Counter;
@@ -52,7 +52,7 @@ contract BOBA3Core is ERC721Enumerable, ReentrancyGuard, Ownable, Pausable {
         string memory base_layer = IStorage(BOBA3StorageAddr).getBase(bbt.base);
         string memory bubble_layer = "";
         string memory cream_layer = "";
-
+        
         // Conditional statement for bubble layer
         if (bbt.is_bubbles == 1) {
             bubble_layer = IStorage(BOBA3StorageAddr).getBubbles();
@@ -79,11 +79,11 @@ contract BOBA3Core is ERC721Enumerable, ReentrancyGuard, Ownable, Pausable {
         json = string(abi.encodePacked(json, '"description": "Enjoy your BOBA3!",'));
 
         json = string(abi.encodePacked(json,
-                '"attributes": [{"trait_type": "Contains Bubbles?", "value": "', uint256(bbt.is_bubbles).toString(), 
+                '"attributes": [{"trait_type": "Bubbles", "value": "', uint256(bbt.is_bubbles).toString(), 
                 '"},',
-                '{"trait_type": "Contains Cream?", "value": "', uint256(bbt.is_cream).toString(),
-                '"}',
-                '{"trait_type": "Tea or Latte?", "value": "', uint256(bbt.base).toString(),
+                '{"trait_type": "Cream", "value": "', uint256(bbt.is_cream).toString(),
+                '"},',
+                '{"trait_type": "Tea_or_Latte?", "value": "', uint256(bbt.base).toString(),
                 '"}'
                 ));
 

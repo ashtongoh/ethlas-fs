@@ -1,9 +1,6 @@
 //SPDX-License-Identifier: UNLICENSED
 
-// Solidity files have to start with this pragma.
-// It will be used by the Solidity compiler to validate its version.
 pragma solidity ^0.8.9;
-
 
 contract BOBA3Storage {
 
@@ -34,4 +31,14 @@ contract BOBA3Storage {
     function getBase(uint256 _index) external view returns (string memory) {
         return base[_index];
     }
+
+    function getBubbles() external view returns (string memory){
+        return bubbles;
+    }
+
+    function getCream() external view returns (string memory){
+        return cream;
+    }
+
+
 }

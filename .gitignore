@@ -19,6 +19,8 @@
 .DS_Store
 *.pem
 .env
+/artifacts
+/cache
 
 # debug
 npm-debug.log*

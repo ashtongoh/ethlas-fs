@@ -11,12 +11,12 @@ async function main() {
   const _BOBA3Storage = await ethers.getContractFactory('BOBA3Storage');
   const BOBA3Storage = await _BOBA3Storage.deploy();
 
-  console.log("BOBA3Storage contract:", BOBA3Storage.address);
+  console.log("Deployed BOBA3Storage contract:", BOBA3Storage.address);
 
   const _BOBA3Core = await ethers.getContractFactory('BOBA3Core');
   const BOBA3Core = await _BOBA3Core.deploy(BOBA3Storage.address);
 
-  console.log("BOBA3Core contract:", BOBA3Core.address);
+  console.log("Deployed BOBA3Core contract:", BOBA3Core.address);
 }
 
 main()
