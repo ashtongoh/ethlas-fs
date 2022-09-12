@@ -21,7 +21,9 @@ export default function Home() {
   const val2 = useSelector((state) => state.form.value2)
   const val3 = useSelector((state) => state.form.value3)
 
-  // Function for getting data from DB
+  // Disclaimer:
+  // This function is supposed to return data based on a specific user_addr
+  // However, it doesn't seem to work and still returns all data
   const getSpecificData = async () => {
     return axios
       .get("https://firestore.googleapis.com/v1/projects/ethlas-project/databases/(default)/documents/transactions?key=AIzaSyD1VnJDlndU8pE_I9zbOtfXxnMqTGTTxeo",
@@ -114,9 +116,7 @@ export default function Home() {
   });
 
   // Used for adding document to Firestore
-  // const mutation = useMutation(newTodo => {
-  //   return axios.post('/todos', newTodo)
-  // })
+  // const mutation = useMutation(createDocument);
 
   return (
     <div>
@@ -132,9 +132,9 @@ export default function Home() {
             {/* Code segment for mockup code */}
             <div className="mockup-code shadow-2xl mt-4">
               <pre data-prefix="1"><code>Customize your own boba:</code></pre>
-              <pre data-prefix="4" className="text-warning"><code>Boba: If yes, $0.50. Else, $0</code></pre>
-              <pre data-prefix="2" className="text-warning"><code>Foam: If yes, $0.50. Else, $0</code></pre>
-              <pre data-prefix="3" className="text-warning"><code>Base: If yes, $1. Else, $1.50</code></pre>
+              <pre data-prefix="4" className="text-warning"><code>Boba: If yes, +$0.50. Else, +$0</code></pre>
+              <pre data-prefix="2" className="text-warning"><code>Foam: If yes, +$0.50. Else, +$0</code></pre>
+              <pre data-prefix="3" className="text-warning"><code>Base: If yes, +$1. Else, +$1.50</code></pre>
               <pre data-prefix="5" className="text-success"><code>Shaking up your order!</code></pre>
             </div>
 
@@ -186,8 +186,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                {/* Make sure to disable buy button if the user is not logged in */}
-
+                {/* Only enable buy button if the user is connected to his/her wallet */}
                 <div className="flex justify-center">
                   <div className="form-control mt-6">
                     <div className="indicator">
@@ -201,15 +200,13 @@ export default function Home() {
                         <button className="btn btn-wide btn-primary" disabled={true}>Buy</button>
                         </>)
                       }
-                      {/* <button className="btn btn-primary" onClick={() => { buy.write() }}>Buy</button> */}
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            {/* <button className="btn btn-ghost" onClick={() => { readTx.refetch() }}>
-              View Transaction History
-            </button> */}
+
+            {/* Only show transaction button if the user is connected to his/her wallet */}
             {
               isConnected &&
               (<>
@@ -218,6 +215,8 @@ export default function Home() {
             }
           </div>
         </div>
+
+        {/* Code segment for transaction modal */}
         <input type="checkbox" id="my-modal-6" className="modal-toggle" />
         <div className="modal modal-bottom sm:modal-middle">
           <div className="modal-box">
@@ -258,7 +257,7 @@ export default function Home() {
               </table>
             </div>
             <div className="modal-action">
-              <label htmlFor="my-modal-6" className="btn">Ok!</label>
+              <label htmlFor="my-modal-6" className="btn">Ok</label>
             </div>
           </div>
         </div>

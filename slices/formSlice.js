@@ -1,6 +1,7 @@
 
 import { createSlice } from '@reduxjs/toolkit'
 
+// Initial states for all global variables
 const initialState = {
   cost: 0,
   value1: 0,
