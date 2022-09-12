@@ -132,10 +132,10 @@ export default function Home() {
             {/* Code segment for mockup code */}
             <div className="mockup-code shadow-2xl mt-4">
               <pre data-prefix="1"><code>// Customize your own boba:</code></pre>
-              <pre data-prefix="4" className="text-warning"><code>Boba: Yes($0.50) || No($0)</code></pre>
-              <pre data-prefix="2" className="text-warning"><code>Foam: Yes($0.50) || No($0)</code></pre>
-              <pre data-prefix="3" className="text-warning"><code>Base: Milk Tea($1.00) || Latte($1.50)</code></pre>
-              <pre data-prefix="5" className="text-success"><code>Shakin' up your order!</code></pre>
+              <pre data-prefix="4" className="text-warning"><code>Boba: If yes, $0.50. Else, $0</code></pre>
+              <pre data-prefix="2" className="text-warning"><code>Foam: If yes, $0.50. Else, $0</code></pre>
+              <pre data-prefix="3" className="text-warning"><code>Base: If yes, $1. Else, $1.50</code></pre>
+              <pre data-prefix="5" className="text-success"><code>Shaking up your order!</code></pre>
             </div>
 
             {/* Code segment for order menu */}
