@@ -21,13 +21,18 @@ In addition to this, a receipt will be generated in the form of an NFT rather th
 
 
 ## Improvements
-  1) The main components in the index page can be further broken down into smaller funcctional components, which would give the overall code a much cleaner look
+  
+  1) Security flaw: Going forward, the public API key or query link should be obfuscated from public, and be kept in the environment variables. Also, proper account authentication should be set up to gain access to them and application/website only restriction can be enforced on the API. **As a precautionary measure and not to break the current production code, I have already limited the quota calls for the public API key.**
+  
+  2) The main components in the index page can be further broken down into smaller funcctional components, which would give the overall code a much cleaner look
 
-  2) Better structure the Redux slices
+  3) Better structure the Redux slices
 
-  3) Only unit tests were created and used for the smart contracts due to time constraint. Going forward, unit tests should be performed on the webpage.
+  4) Only unit tests were created and used for the smart contracts due to time constraint. Going forward, unit tests should be performed on the webpage.
 
-  4) This application could also make use of the batch and transaction cloud functions should the functions become more complex. As of now, since the functions are pretty simple, only REST API queries were made with react-query.
+  5) This application could also make use of the batch and transaction cloud functions should the functions become more complex. As of now, since the functions are pretty simple, only REST API queries were made with react-query.
+  
+  6) Fix the the black horizontal bar, just above the footer, that is appearing on laptop screens, but not on desktop monitors.
     
 ## Instructions
 
@@ -38,3 +43,14 @@ In addition to this, a receipt will be generated in the form of an NFT rather th
   5) Hit buy -- you'll only need to pay for the gas fees. I intentionally removed fees so that it will be easier to test.
   6) Visit OpenSea Testnet to view your NFT: https://testnets.opensea.io/
   7) Check your transaction history on the webpage to view latest transaction
+
+
+## Signing off
+
+Always happy to build, make mistakes and learn from them.
+
+Cheers,
+Ashton
+ 
+ 
+ 
